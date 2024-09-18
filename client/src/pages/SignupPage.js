@@ -25,3 +25,5 @@ const SignupPage = () => {
     </div>
   )
 }
+
+export default SignupPage;
