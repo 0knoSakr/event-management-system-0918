@@ -2,7 +2,7 @@ import React from 'react';
 
 const CreateEventPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>イベント作成</h1>
     </div>
   )

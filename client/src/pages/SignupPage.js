@@ -1,8 +1,9 @@
 import React from 'react';
+import '../App.css';
 
 const SignupPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>新規登録</h1>
       <form className="textBox">
         <div>

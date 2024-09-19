@@ -2,7 +2,7 @@ import React from 'react';
 
 const EventListPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>イベントリスト</h1>
     </div>
   )

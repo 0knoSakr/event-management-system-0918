@@ -1,8 +1,9 @@
 import React from "react";
+import '../App.css';
 
 const LoginPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>ログインページ</h1>
       <form className="textBox">
         <div>
