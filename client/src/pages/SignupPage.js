@@ -1,11 +1,11 @@
 import React from 'react';
-import api from '../services/api';
+import '../App.css';
 
 const SignupPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>新規登録</h1>
-      <form>
+      <form className="textBox">
         <div>
           <input type="text"placeholder="ユーザー名"/>
         </div>
@@ -21,7 +21,12 @@ const SignupPage = () => {
         <div>
           <input type="text"placeholder="パスワード(確認)"/>
         </div>
+        <div>
+          <button>新規登録</button>
+        </div>
       </form>
     </div>
   )
 }
+
+export default SignupPage;

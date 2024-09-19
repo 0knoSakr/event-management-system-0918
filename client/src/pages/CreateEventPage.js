@@ -1,12 +1,18 @@
-import React from 'react';
-import api from '../services/api';
+import React from "react";
 
 const CreateEventPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>イベント作成</h1>
+      <form className="textBox">
+        <div>
+          <label htmlFor="">イベント名:</label>
+          <input type="text" />
+        </div>
+        <button>追加</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
 export default CreateEventPage;

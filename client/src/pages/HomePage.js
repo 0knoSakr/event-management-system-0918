@@ -1,9 +1,8 @@
 import React from 'react';
-import api from '../services/api';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>ホームページ</h1>
     </div>
   )

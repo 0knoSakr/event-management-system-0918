@@ -1,10 +1,11 @@
 import React from 'react';
-import api from '../services/api';
 
 const EventListPage = () => {
   return (
-    <div>
+    <div className="App">
       <h1>イベントリスト</h1>
+      <p>イベントA</p>
+      <p>イベントB</p>
     </div>
   )
 }
