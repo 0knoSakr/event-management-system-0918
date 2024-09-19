@@ -8,7 +8,7 @@ const Navber = () => {
         <header>
           <div>
             <nav>
-            <ul>
+            <ul className="user-info">
                 <li><Link to="/">ホーム</Link></li>
                 <li><Link to="/login">ログイン</Link></li>
                 <li><Link to="/signup">新規登録</Link></li>

@@ -4,7 +4,7 @@ const SignupPage = () => {
   return (
     <div>
       <h1>新規登録</h1>
-      <form>
+      <form className="textBox">
         <div>
           <input type="text"placeholder="ユーザー名"/>
         </div>
