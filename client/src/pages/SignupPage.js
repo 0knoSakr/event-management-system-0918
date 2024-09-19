@@ -20,6 +20,9 @@ const SignupPage = () => {
         <div>
           <input type="text"placeholder="パスワード(確認)"/>
         </div>
+        <div>
+          <button>新規登録</button>
+        </div>
       </form>
     </div>
   )

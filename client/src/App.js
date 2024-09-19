@@ -7,11 +7,14 @@ import SignupPage from "./pages/SignupPage";
 import CreateEventPage from "./pages/CreateEventPage";
 import EventListPage from "./pages/EventListPage";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import './App.css';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Header />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
