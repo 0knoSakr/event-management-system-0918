@@ -6,10 +6,10 @@ import "../styles/Header.css";
 const Header = () => {
   return (
     <>
-      <heder className="headerStyle">
+      <header className="headerStyle">
         <h1><Link to="/">イベント管理システム</Link></h1>
         <Navbar />
-      </heder>
+      </header>
     </>
   );
 };
