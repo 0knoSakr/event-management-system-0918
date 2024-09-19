@@ -6,7 +6,6 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import CreateEventPage from "./pages/CreateEventPage";
 import EventListPage from "./pages/EventListPage";
-import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import './App.css';
 
@@ -15,7 +14,6 @@ const App = () => {
     <>
       <BrowserRouter>
         <Header />
-        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />

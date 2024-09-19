@@ -18,7 +18,6 @@ const Navber = () => {
             </nav>
           </div>
         </header>
-
     </div>
   )
 }

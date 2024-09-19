@@ -1,10 +1,16 @@
 import React from 'react';
+import Navbar from "./Navbar";
 import '../styles/Header.css';
 
 const Header = () => {
-  <div>
+  return (
+  <>
+  <heder className="headerStyle">
     <h1>イベント管理システム</h1>
-  </div>
+  </heder>
+  <Navbar />
+  </>
+  )
 }
 
 export default Header;
