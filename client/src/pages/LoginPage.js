@@ -5,9 +5,9 @@ const LoginPage = () => {
     <div>
       <h1>ログインページ</h1>
       <form>
-        <label for="userName">ユーザー名</label>
+        <label htmlFor="userName">ユーザー名</label>
         <input type="text" />
-        <label for="password">パスワード</label>
+        <label htmlFor="password">パスワード</label>
         <input type="password" />
         <button type="submit">ログイン</button>
       </form>

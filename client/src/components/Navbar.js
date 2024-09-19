@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import App from '../App.css';
 
 const Navber = () => {
   return (
@@ -7,8 +8,9 @@ const Navber = () => {
         <header>
           <div>
             <nav>
-              <ul>
-                <li><Link to="/">ログイン</Link></li>
+            <ul>
+                <li><Link to="/">ホーム</Link></li>
+                <li><Link to="/login">ログイン</Link></li>
                 <li><Link to="/signup">新規登録</Link></li>
                 <li><Link to="/create-event">イベント作成</Link></li>
                 <li><Link to="/event-list">イベントリスト</Link></li>
