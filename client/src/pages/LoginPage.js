@@ -20,7 +20,7 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let valid = true;
-    let errorObj = { name: "", passwoed: "" };
+    let errorObj = { name: "", password: "" };
 
     // 名前が空かどうかのチェック
     if (name.trim() === "") {
