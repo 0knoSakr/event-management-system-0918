@@ -76,6 +76,11 @@ button{
   color: #FFF;
 }
 
+nav ul li {
+  color: white;
+  cursor: pointer;
+}
+
 .user-info {
   display: flex;
   justify-content: flex-start; /* 左寄せに変更 */
