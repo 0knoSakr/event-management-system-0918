@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const EventListPage = () => {
+  const [user, setUser] = useState([]);
+
   return (
     <div className="App">
       <h1>イベントリスト</h1>
-      <p>イベントA</p>
-      <p>イベントB</p>
+
     </div>
   )
 }
