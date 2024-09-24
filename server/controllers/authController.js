@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = 'your_jwt_secret_key';
-
 const users = [{ id: 1, username: 'test', password: 'password' }];
 
 exports.login = (req, res) => {
@@ -19,3 +18,4 @@ exports.login = (req, res) => {
 exports.checkLogin = (req, res) => {
   res.json({ loggedIn: true, username: req.user.username });
 };
+
