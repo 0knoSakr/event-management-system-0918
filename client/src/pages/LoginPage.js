@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import api from "../services/api";
 import '../App.css';
 
 const LoginPage = () => {
@@ -17,7 +18,7 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  // 仮のAPIリクエスト関数
+  // APIリクエスト関数
   const mockApiRequest = async (data) => {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -63,6 +64,8 @@ const LoginPage = () => {
       setError(errorObj);
       setMessage(""); // エラーメッセージが出る場合、ログインメッセージをクリア
     }
+
+    
   };
 
   return (
