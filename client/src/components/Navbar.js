@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-const Navber = () => {
+const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
 
@@ -51,4 +51,4 @@ const Navber = () => {
   );
 };
 
-export default Navber;
+export default Navbar;
