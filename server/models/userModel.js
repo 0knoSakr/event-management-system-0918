@@ -1,30 +1,49 @@
-// models/userModel.js
-const db = require('../config/dbConfig'); // MySQL接続の設定をインポート
-const bcrypt = require('bcrypt');
+// 必要なモジュールのインポート
+const db = require('../config/dbConfig');  // データベース接続を設定するためのカスタム設定ファイル
+const bcrypt = require('bcrypt');  // パスワードのハッシュ化と比較を行うためのライブラリ
 
-const User = {
-  // ユーザー作成
-  create: async (username, password) => {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    return new Promise((resolve, reject) => {
-      const query = 'INSERT INTO users (username, password) VALUES (?, ?)';
-      db.query(query, [username, hashedPassword], (err, result) => {
-        if (err) return reject(err);
-        resolve(result);
-      });
-    });
-  },
-
-  // ユーザー取得
-  findByUsername: (username) => {
-    return new Promise((resolve, reject) => {
-      const query = 'SELECT * FROM users WHERE username = ?';
-      db.query(query, [username], (err, result) => {
-        if (err) return reject(err);
-        resolve(result[0]); // 1人のユーザーを取得
-      });
-    });
-  },
+// ユーザー作成機能の実装
+const createUser = (username, email, password, callback) => {
+  // パスワードをハッシュ化
+  bcrypt.hash(password, 10, (err, hash) => {
+    if (err) {
+      // ハッシュ化中にエラーが発生した場合、コールバック関数にエラーを渡す
+      callback(err);
+    } else {
+      // ハッシュ化が成功した場合、ユーザー情報をデータベースに挿入
+      db.query(
+        'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
+        [username, email, hash],  // プレースホルダを使用してクエリに変数を安全に挿入
+        (err, results) => {
+          if (err) {
+            // データベース操作中にエラーが発生した場合、コールバック関数にエラーを渡す
+            callback(err);
+          } else {
+            // データベース操作が成功した場合、コールバック関数に結果を渡す
+            callback(null, results);
+          }
+        }
+      );
+    }
+  });
 };
 
-module.exports = User;
+// ユーザー名でユーザーを検索する機能の実装
+const findUserByUsername = (username, callback) => {
+  // データベースからユーザー名に基づいてユーザー情報を取得
+  db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+    if (err) {
+      // データベース操作中にエラーが発生した場合、コールバック関数にエラーを渡す
+      callback(err);
+    } else {
+      // ユーザーが見つかった場合、コールバック関数にユーザー情報を渡す
+      callback(null, results[0]);
+    }
+  });
+};
+
+// モジュールとしてエクスポート
+module.exports = {
+  createUser,
+  findUserByUsername,
+};
