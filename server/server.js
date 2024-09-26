@@ -6,9 +6,11 @@ const authRoutes = require('./routes/authRoutes'); // 認証用のルートを�
 const jwt = require('jsonwebtoken'); // JWT関連のモジュールもインポート
 const app = express();
 const dbConfig = require('./config/dbConfig');  // DB設定のインポート
+const router = express.Router();
 
 app.use(cors());
 app.use(express.json());
+app.use('/users', userRoutes);
 
 // JWT シークレットキー
 const JWT_SECRET = 'your_jwt_secret_key'; // 適切な場所に置きます
@@ -58,11 +60,6 @@ dbConfig.connect(err => {
 });
 
 // サーバーの起動
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-app.use('/api/users', userRoutes);
+app.use('/users', userRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

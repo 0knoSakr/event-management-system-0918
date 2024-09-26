@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import api from "../services/api";
+import React, { useState } from "react";
 import '../App.css';
 
 const LoginPage = () => {
@@ -65,7 +64,7 @@ const LoginPage = () => {
       setMessage(""); // エラーメッセージが出る場合、ログインメッセージをクリア
     }
 
-    
+
   };
 
   return (
